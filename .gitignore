@@ -1,3 +1,5 @@
+mail_keyword.json
+
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]
@@ -124,5 +126,3 @@ dmypy.json
 # Pyre type checker
 .pyre/
 
-mail_keyword.json
-regPoliceold.py
