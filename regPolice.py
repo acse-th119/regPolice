@@ -81,7 +81,8 @@ def send_email(title, content):
     try:
         smtpObj = smtplib.SMTP_SSL(mail_host, 465)  
         smtpObj.login(mail_user, mail_pass)  
-        smtpObj.sendmail(sender, receivers, message.as_string())  
+        smtpObj.sendmail(sender, receivers, message.as_string())
+        logger.warning('Mail has been send successfully.')
         print("mail has been send successfully.")
     except smtplib.SMTPException as e:
         print(e)
@@ -121,7 +122,7 @@ if __name__ == '__main__':
             if date_element:
                 logger.warning('Found it, Registration time in weekday {}: {}'.format(int(in_weekday(date_element.text)[1])+1,date_element.text))
                 # if (hour_now <= timeS or hour_now >= timeE) and in_weekday(date_element.text)[0]:
-                send_email('Police Registration Booking Alarm', "Post time: {}\n\nRegistration Time: {}\n".format(time_now, date_element.text))
+                send_email('Police Registration Booking Alarm', "Registration Time: {}\n\n\n\nCheck on {}\n".format(date_element.text, time_now))
                 police_browser.refresh()
                 time.sleep(15)
         except Exception as e:
