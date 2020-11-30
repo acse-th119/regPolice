@@ -1,4 +1,7 @@
 mail_keyword.json
+regPoliceold.py
+test_mail.py
+runPolice.ipynb
 
 # Byte-compiled / optimized / DLL files
 __pycache__/
